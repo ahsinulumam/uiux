@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/*========== VARIABLES CSS ==========*/
+:root {
+  --header-height: 3.5rem;
+  --nav-width: 100%;
+  /*========== Colors ==========*/
+  --first-color: #000
+;
+  --first-color-light: #D9D9D9;
+  --title-color: #ffffff;
+  --text-color: #58555e;
+  --text-color-light: #A5A1AA;
+  --body-color: #000000;
+  --container-color:#ffffff; 
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: .938rem;
+  --small-font-size: .75rem;
+  --smaller-font-size: .75rem;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+/*========== BASE ==========*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+body {
+  margin: var(--header-height) 0 0 0;
+  padding: 0rem 0rem 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: #ffffff;
+  color: var(--text-color);
+}
+h3 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*========== HEADER ==========*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #D7114A;
+   border-radius:0px 0px 0px 0px;
+  box-shadow: 0 0px 4px rgba(0,0,0,0.25);
+  padding: 0 1rem;
+  z-index: var(--z-fixed);
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  justify-content: space-between;
+}
+.header__img {
+  position:relative;
+  width:109px;
+  height: 31px;
+  left:1.5%;
+}
+	.nama-pengguna {
+		width:53%;
+		height :4;
+		padding:5px 10px;
+		font-family: Arial;
+     font-weight: bold;
+		font-size:12px;
+     background-color: #ff000000;
+		color:#4F4F4F;
+		position:fixed;
+		top:8px;
+		left:14%;
+		z-index: 2;
+		border-radius: 10px;
+		box-shadow: 0 0 0px #ffffff;
+}
+.header__toggle {
+  color: #ffffff;
+  margin-top:1;
+   margin-right:14;}
+.nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  padding: 1rem 1rem 0;
+  background-color: var(--container-color);
+  box-shadow: 1px 0 0 rgba(22, 8, 43, 0.1);
+  z-index: var(--z-fixed);
+  transition: .4s;}
+.nav__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  overflow: auto;
+  scrollbar-width: none; /* For mozilla */}
+/* For Google Chrome and others */
+.nav__container::-webkit-scrollbar {
+  display: none;}
+.nav__logo {
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2.5rem;}
+.nav__list, 
+.nav__items {
+  display: grid;}
+.nav__list {
+  row-gap: 2.5rem;}
+.nav__items {
+  row-gap: 1.5rem;}
+.nav__subtitle {
+  font-size: var(--normal-font-size);
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: var(--text-color-light);}
+.nav__link {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);}
+.nav__link:hover {
+  color: var(--first-color);}
+.nav__icon {
+  font-size: 1.2rem;
+  margin-right: .5rem;}
+.header__profil {
+  position:relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top:0px;
+  left:0%;}
+.nav__name {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  white-space: nowrap;}
+.nav__logout {
+  margin-top: 5rem;
+}
+/* Dropdown */
+.nav__dropdown {
+  overflow: hidden;
+  max-height: 21px;
+  transition: .4s ease-in-out;}
+.nav__dropdown-collapse {
+  background-color: var(--first-color-light);
+  border-radius: .25rem;
+  margin-top: 1rem;}
+.nav__dropdown-content {
+  display: grid;
+  row-gap: .5rem;
+  padding: .75rem 2.5rem .75rem 1.8rem;}
+.nav__dropdown-item {
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);}
+.nav__dropdown-item:hover {
+  color: var(--first-color);
+}
+
+.nav__dropdown-icon {
+  margin-left: auto;
+  transition: .4s;
+}
+
+/* Show dropdown collapse */
+.nav__dropdown:hover {
+  max-height: 100rem;
+}
+
+/* Rotate icon arrow */
+.nav__dropdown:hover .nav__dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/*===== Show menu =====*/
+.show-menu {
+  left: 0;
+}
+
+/*===== Active link =====*/
+.active {
+  color: var(--first-color);}
+  
+  * {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relativ;
+  margin-top: 0%;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 7px;
+  width: 7px;
+  margin-top: 0 1;
+  background-color: #D1D1D1;
+  border-radius: 61%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: #FC2983;
+  width:22px;
+  border-radius:19px;}
+.dotdark{
+background-color:azure;
+}
+.activedark{background-color:white}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1s;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+	#navbarr {
+		height:60px;
+		position: fixed;
+		bottom: 0px;
+		left:0%;
+		padding-top: 5px;
+		width: 100%;
+		border-radius:0px 0px 0px 0px;
+		display: block;
+	  transition: bottom 0.3s;
+		z-index:6;
+     background-image: url(https://i.ibb.co/NmjQc07/Pics-Art-03-06-06-14-39.png);
+   background-size: 100% 100%;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+}
+#navbarr a {
+		width:20%;
+		float: left;
+		display: block;
+		color: #ffff00;
+		text-align: center;
+		padding-top: 0px;
+		text-decoration: none;
+		font-size: 14px;
+		font-family:Arial;
+		color:grey;
+	}
+	#navbarr a:hover {
+		color:#2e99a5 ;
+		cursor:none;
+}
+#strip-navbarr {
+width:30%;
+height:auto;
+margin-top:-30px;
+}
